@@ -1,19 +1,13 @@
 import { Router } from 'express';
-import { StatusCodes } from 'http-status-codes';
+
+import { CidadesController } from './../controllers';
 
 const router = Router();
 
-router.get('/teste', (req, res) => {
-	return res.send('TESTE');
+router.get('/', (req, res) => {
+	return res.send('FUNCIONANDO!');
 });
 
-router.get('/users', (req, res) => {
-	return res.send('<h1>Usuários</h1>'); 
-});
-
-router.post('/hello', (req, res) => {
-	console.log(req.body);
-	return res.status(StatusCodes.UNAUTHORIZED).json(req.body); 
-});
+router.post('/cidades', CidadesController.create);
 
 export { router };
