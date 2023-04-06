@@ -1,13 +1,6 @@
 import { Router } from 'express';
+import { CidadesController } from '../controllers';
 const router = Router();
-
-const connection = mysql.createConnection({
-  host: 'containers-us-west-32.railway.app',
-  user: 'root',
-  password: 'EVq54OKSNOt7SL2Ham4Y',
-  database: 'railway',
-  port: 7214
-});
 
 router.get('/', (req, res) => {
 	return res.send('FUNCIONANDO!');
